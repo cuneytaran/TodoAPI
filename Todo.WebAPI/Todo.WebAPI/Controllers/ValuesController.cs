@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Todo.Business.Abstract;
 
-namespace Todo.API.Controllers
+namespace Todo.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private ICompanyService _companyService;
+
+        public ValuesController(ICompanyService companyService)
+        {
+            _companyService = companyService;
+        }
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var values =  _companyService.GetAll();
+            return Ok(values);
         }
 
         // GET api/values/5

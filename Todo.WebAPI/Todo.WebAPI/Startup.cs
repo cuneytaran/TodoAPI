@@ -9,9 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Todo.API.Data;
+using Todo.Business.Abstract;
+using Todo.Business.Concrete;
+using Todo.DataAccess.Abstract;
+using Todo.DataAccess.Concrete;
 
-namespace Todo.API
+namespace Todo.WebAPI
 {
     public class Startup
     {
@@ -25,8 +28,8 @@ namespace Todo.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x =>
-                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ICompanyService, CompanyManager>();
+            services.AddScoped<ICompanyDal, EfCompanyDal>();
             services.AddMvc();
         }
 
