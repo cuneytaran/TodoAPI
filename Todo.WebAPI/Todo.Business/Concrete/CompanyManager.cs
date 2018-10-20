@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Todo.Business.Abstract;
 using Todo.DataAccess.Abstract;
-using Todo.Entities.Concrete;
+using Todo.DataAccess.Models;
 
 namespace Todo.Business.Concrete
 {

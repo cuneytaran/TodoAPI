@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Todo.Core\Todo.Core.csproj" />
-    <ProjectReference Include="..\Todo.Entities\Todo.Entities.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Todo.Entities.Concrete;
+using Todo.DataAccess.Models;
 
 namespace Todo.Business.Abstract
 {

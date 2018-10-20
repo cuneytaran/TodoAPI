@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Todo.Core.DataAccess;
-using Todo.Entities.Concrete;
+using Todo.DataAccess.Models;
 
 namespace Todo.DataAccess.Abstract
 {
